@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
   useEffect(() => {
-    window?.$wujie?.bus?.$emit("loglog", "123", 545, count);
+    window?.$wujie?.bus?.$emit("loglog", count);
   }, [count]);
   return (
     <>
