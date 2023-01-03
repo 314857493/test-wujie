@@ -1,6 +1,7 @@
 import { useState } from "react";
 import wujieLogo from "./assets/wujie.svg";
 import repoLogo from "./assets/turborepo.svg";
+import { Button } from "ui";
 
 import WujieReact from "wujie-react";
 const { bus } = WujieReact;
@@ -10,6 +11,10 @@ bus.$on("loglog", (...arg: any[]) => {
 import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+  bus.$on("count+1", () => {
+    setCount((prevCount) => prevCount + 1);
+  });
   return (
     <div className="App">
       <div>
@@ -28,8 +33,9 @@ function App() {
         </a>
       </div>
       <h1>Turborepo + Vite + Wujie</h1>
+      <Button onClick={() => setCount((count) => count + 1)} />
       <WujieReact
-        props={{ name: "subapp" }}
+        props={{ name: "subapp", count }}
         beforeLoad={() => {
           console.log("beforeLoad");
         }}
@@ -41,7 +47,7 @@ function App() {
         sync={true}
       />
       <WujieReact
-        props={{ name: "subappvue" }}
+        props={{ name: "subappvue", count }}
         beforeLoad={() => {
           console.log("beforeLoad");
         }}

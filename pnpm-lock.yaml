@@ -49,12 +49,14 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       typescript: ^4.9.3
+      ui: workspace:*
       vite: ^4.0.0
       wujie: ^1.0.2
       wujie-react: ^1.0.2
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      ui: link:../../packages/ui
       wujie: 1.0.2
       wujie-react: 1.0.2_react@18.2.0
     devDependencies:
