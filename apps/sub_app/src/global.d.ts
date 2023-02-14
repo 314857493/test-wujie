@@ -9,4 +9,6 @@ type IWujie = {
   location?: Object;
 };
 
+declare module 'styled-components'
+
 // declare var $wujie: IWujie;

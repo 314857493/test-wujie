@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import styled from "styled-components";
+
+const Button = styled.div.attrs({
+  role: "button",
+})`
+  background-color: red;
+`;
+
+const MyButton = styled(Button)`
+  color: blue;
+`;
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,13 +21,13 @@ function App() {
     <>
       <div>wujie props:{JSON.stringify(window?.$wujie?.props)}</div>
       <div className="card">
-        <button
+        <MyButton
           onClick={() => {
             setCount((count) => count + 1);
           }}
         >
           count is {count}
-        </button>
+        </MyButton>
       </div>
     </>
   );
